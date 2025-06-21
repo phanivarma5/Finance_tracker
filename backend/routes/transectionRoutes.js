@@ -1,5 +1,5 @@
 const express = require("express");
-const { addTransection, getAllTransection, editTransection, deleteTransection } = require("../controllers/transectionctrl");
+const { addTransection, getAllTransection, editTransection, deleteTransection } = require("../controllers/transectionCtrl");
 
 const router = express.Router();
 
