@@ -69,7 +69,7 @@ const HomePage = () => {
                 const user = JSON.parse(userData);
                 setLoading(true);
 
-                const url = "http://localhost:8080/api/v1/transections/get-transection";
+                const url = `${process.env.REACT_APP_API_URL}/api/v1/transections/get-transection`;
                 console.log("Request URL:", url);
                 console.log("Params:", { userid: user._id, frequency: frequency, type: type });
 
@@ -110,7 +110,7 @@ const HomePage = () => {
     const handleDelete = async (record) => {
         try {
             setLoading(true);
-            await axios.post("http://localhost:8080/api/v1/transections/delete-transection", {transactionId: record._id} );
+            await axios.post(`${process.env.REACT_APP_API_URL}/v1/transections/delete-transection`, {transactionId: record._id} );
             setLoading(false);
             message.success("Transaction Deleted");
         } catch (error) {
@@ -130,7 +130,7 @@ const HomePage = () => {
             const user = JSON.parse(userData);
             setLoading(true);
             if(editable){
-                await axios.post('http://localhost:8080/api/v1/transections/edit-transection', {
+                await axios.post(`${process.env.REACT_APP_API_URL}/v1/transections/edit-transection`, {
                     payload:{
                         ...values,
                         userId:user._id,
@@ -140,7 +140,7 @@ const HomePage = () => {
                 setLoading(false);
                 message.success("Transaction Updated Successfully");
             }else{
-                await axios.post('http://localhost:8080/api/v1/transections/add-transection', {
+                await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/transections/add-transection`, {
                     ...values,
                     userid: user._id,
                 });
