@@ -1,0 +1,295 @@
+/* client/src/App.css */
+
+/* --- THEME: "VIBRANT CLARITY" --- */
+
+/* 1. CSS Variables & Global Styles
+/* ======================================= */
+:root {
+  --bg-color: #F7F9FC;
+  --primary-color: #6C63FF;
+  --primary-hover: #5b54d6;
+  --text-dark: #2D3748;
+  --text-light: #718096;
+  --card-bg: #FFFFFF;
+  --border-color: #E2E8F0;
+  --success-color: #48BB78;
+  --danger-color: #F56565;
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-radius: 12px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.content {
+  min-height: calc(100vh - 140px);
+  padding: 2rem;
+}
+
+
+/* 2. Layout: Header & Footer
+/* ======================================= */
+.navbar {
+  background-color: var(--card-bg) !important;
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 2rem !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--primary-color) !important;
+}
+
+.navbar .nav-link, .navbar .nav-item p {
+  font-weight: 500;
+  color: var(--text-dark) !important;
+  margin-right: 1rem;
+}
+
+.navbar .btn-primary {
+  background-color: transparent !important;
+  border: 2px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.navbar .btn-primary:hover {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.bg-dark { /* Footer Override */
+  background: var(--text-dark) !important;
+  color: var(--bg-color) !important;
+}
+
+
+/* 3. Authentication Pages (Login/Register)
+/* ======================================= */
+.register-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.register-page .ant-form {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--card-bg);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  border-top: 5px solid var(--primary-color);
+}
+
+.register-page h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.register-page .ant-form-item-label > label {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+
+/* 4. HomePage: Filters & Main UI
+/* ======================================= */
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.filters h6 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.switch-icons {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 6px;
+  background-color: var(--bg-color);
+}
+
+.switch-icons .anticon {
+  font-size: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.active-icon {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.inactive-icon {
+  color: var(--text-light);
+}
+.inactive-icon:hover {
+  background-color: #e2e8f0;
+}
+
+
+/* 5. Component Overrides (Ant Design & Bootstrap)
+/* ======================================= */
+.btn {
+  border-radius: 8px !important;
+  transition: all 0.2s ease-in-out !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600 !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Inputs, Selects, DatePickers */
+.ant-select-selector, .ant-picker, .ant-input, .ant-input-password, .ant-input-number {
+  border-radius: 8px !important;
+  border: 1px solid var(--border-color) !important;
+  background-color: white !important;
+}
+.ant-select-selector:hover, .ant-picker:hover, .ant-input:hover, .ant-input-password:hover {
+  border-color: var(--primary-color) !important;
+}
+.ant-select-focused .ant-select-selector, .ant-picker-focused, .ant-input:focus, .ant-input-password:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2) !important;
+}
+
+/* Table */
+.ant-table-wrapper {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #fafbfd !important;
+  color: var(--text-light) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--border-color) !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--border-color) !important;
+  font-weight: 500;
+}
+
+.ant-table-tbody > tr:last-child > td {
+  border-bottom: none !important;
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background: var(--bg-color) !important;
+}
+
+.ant-table-cell .anticon-edit { color: var(--primary-color); font-size: 18px; }
+.ant-table-cell .anticon-delete { color: var(--danger-color); font-size: 18px; }
+
+
+/* 6. Analytics & Cards
+/* ======================================= */
+.card {
+  border: none !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.card-header {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.text-success { color: var(--success-color) !important; font-weight: 600; }
+.text-danger { color: var(--danger-color) !important; font-weight: 600; }
+
+.ant-progress-text {
+  font-weight: 600 !important;
+  color: var(--text-dark) !important;
+}
+
+.ant-progress-circle .ant-progress-text {
+  font-size: 1.2rem !important;
+}
+
+
+/* 7. Modal
+/* ======================================= */
+.ant-modal-content {
+  border-radius: var(--border-radius) !important;
+}
+.ant-modal-header {
+  border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+}
+.ant-modal-title {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+
+/* 8. Responsive Design
+/* ======================================= */
+@media (max-width: 768px) {
+  .content { padding: 1rem; }
+  .filters { flex-direction: column; align-items: stretch; }
+  .register-page .ant-form { padding: 2rem; }
+  .navbar { padding: 1rem !important; }
+}
