@@ -3,7 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const colors = require("colors");
-const connectDb = require("./config/connectDB");
+const connectDb = require("./config/connectDb");
 dotenv.config();
 
 //database call
